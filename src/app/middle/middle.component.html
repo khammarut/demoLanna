@@ -1,0 +1,73 @@
+    <div class="container">
+    <mat-card style="margin-top: 2%;">
+      <mat-card-content>
+        <mat-toolbar style="background-color: #800000 ;">
+          <mat-toolbar-row class="white">
+            <h2><strong>โครงการที่ได้รับการอนุมัติ</strong></h2>
+            <span class="example-spacer"></span>
+            <button mat-raised-button style="float: right; background-color: white; color: black;"><mat-icon>note_add</mat-icon>Export to Excel</button>
+          </mat-toolbar-row>
+        </mat-toolbar>  
+        <mat-form-field appearance="legacy" style="float: right;">
+          <mat-label>ค้นหา</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="โครงการ">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field> 
+        <button mat-raised-button color="primary" (click)="pageinput()" style="margin: 16px 8px;"> เพิ่มโครงการ </button>  
+  
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource" matSort>
+  
+            <!-- ID Column -->
+            <ng-container matColumnDef="projecthead">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ชื่อหัวหน้าโครงการ </th>
+              <td mat-cell *matCellDef="let row"> {{row.projecthead}} </td>
+            </ng-container>
+        
+            <!-- Progress Column -->
+            <ng-container matColumnDef="projectname">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ชื่อโครงการ </th>
+              <td mat-cell *matCellDef="let row"> {{row.projectname}}</td>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="department">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> สังกัด </th>
+              <td mat-cell *matCellDef="let row"> {{row.department}} </td>
+            </ng-container>
+        
+            <!-- Color Column -->
+            <ng-container matColumnDef="budget">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> งบประมาณ </th>
+              <td mat-cell *matCellDef="let row"> {{row.budget}} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ความสำเร็จของโครงการ </th>
+              <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.status}} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ดำเนินการ </th>
+              <td mat-cell *matCellDef="let row">
+                <button mat-button (click)="delete(row._id)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+                <button mat-button (click)="update(row._id)">
+                  <mat-icon>exit_to_app</mat-icon>
+                </button>
+                 </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+            </tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="pageSizeOptions"
+          [length]="length"></mat-paginator>
+        </div>
+        
+      </mat-card-content>
+    </mat-card>
+  </div>

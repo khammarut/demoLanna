@@ -1,0 +1,102 @@
+<div class="container">
+    <mat-card style="margin-top: 2%;">
+      <mat-toolbar style="background-color: #800000 ;">
+        <button mat-button (click)="back()">
+          <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <h4><strong>โครงการที่ได้รับการอนุมัติ</strong></h4>
+      </mat-toolbar><br>
+      <mat-card-content>
+        <div class="example-container">
+            <mat-form-field appearance="fill">
+              <mat-label>หัวหน้าโครงการ</mat-label>
+              <input
+                matInput
+                [(ngModel)]="data.projecthead"
+                id="projecthead"
+                required
+              />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>ชื่อโครงการ</mat-label>
+              <input
+                matInput
+                [(ngModel)]="data.projectname"
+                id="projectname"
+                required
+              />
+            </mat-form-field>
+          </div>
+
+          <div class="example-container">
+            <mat-form-field appearance="fill">
+              <mat-label>สังกัด</mat-label>
+              <input
+                matInput
+                [(ngModel)]="data.department"
+                id="department"
+                required
+              />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>งบประมาณ (บาท)</mat-label>
+              <input
+                matInput type="number"
+                [(ngModel)]="data.budget"
+                id="budget"
+                required
+              />
+            </mat-form-field>
+          </div>
+
+          <div class="example-container2">
+            <mat-form-field appearance="fill">
+              <mat-label>ความสอดคล้องกับกลยุทธ์</mat-label>
+              <textarea
+                matInput
+                [(ngModel)]="data.strategic"
+                id="strategic"
+                required
+                rows="10"
+              ></textarea>
+            </mat-form-field>
+          </div>
+
+          <div class="example-container2">
+            <mat-form-field appearance="fill">
+              <mat-label>ตัวชี้วัด</mat-label>
+              <textarea
+                matInput
+                [(ngModel)]="data.metric"
+                id="metric"
+                required
+                rows="10"
+              ></textarea>
+            </mat-form-field>
+          </div>
+
+          
+            <h5>ความสำเร็จของโครงการ</h5><br>
+        <div align="left" class="col-md-12">
+            <section class="example-section">
+                <mat-checkbox class="example-margin" [(ngModel)]="data.progress">มีการส่งมอบรายงานความคืนหน้า</mat-checkbox>
+                <mat-checkbox class="example-margin" [(ngModel)]="data.report">มีการส่งมอบรายงานฉบับสมบูรณ์</mat-checkbox>
+                <mat-checkbox class="example-margin" [(ngModel)]="data.creative">มีการจัดทำข้อมูลในระบบ Creative Lanna</mat-checkbox>
+            </section>
+
+            <section class="example-section">
+                <mat-checkbox class="example-margin" [(ngModel)]="data.picdio">มีการจัดทำ ภาพ/VDO ประกอบ</mat-checkbox>
+                &nbsp;<mat-checkbox class="example-margin" [(ngModel)]="data.output">มีการส่งมอบ Output ครบถ้วน</mat-checkbox>
+                &nbsp;&nbsp;&nbsp;<mat-checkbox class="example-margin" [(ngModel)]="data.dataprogress">มีการเก็บช้อมูลตัวชี้วัดครบถ้วน</mat-checkbox>
+                &nbsp;<mat-checkbox class="example-margin" [(ngModel)]="data.result">ผลการประเมิน</mat-checkbox>
+            </section>
+
+          </div><br>
+
+          <button mat-raised-button color="primary" (click)="update()" style="background-color: white;color: black;width: 100px;"> <strong>แก้ไข</strong> </button> 
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

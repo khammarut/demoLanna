@@ -1,0 +1,603 @@
+<div class="container">
+    <mat-card>
+      <mat-card-content>
+        <button mat-button (click)="back()">
+          <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <mat-tab-group>
+          <mat-tab label="โครงการ">
+            <div class="container">
+              <br />
+  
+              <div class="example-container">
+                <mat-form-field appearance="fill">
+                  <mat-label>ชื่อโครงการ</mat-label>
+                  <input
+                    matInput
+                    [(ngModel)]="data.projectname"
+                    id="projectname"
+                    required
+                    readonly
+                  />
+                </mat-form-field>
+  
+                <mat-form-field appearance="fill">
+                  <mat-label>หน่วยงานที่รับผิดชอบ - คณะ/สถาบัน/สำนัก</mat-label>
+                  <input
+                    matInput
+                    [(ngModel)]="data.department"
+                    id="department"
+                    required
+                    readonly
+                  />
+                </mat-form-field>
+              </div>
+  
+              <div class="example-container">
+                <mat-form-field appearance="fill">
+                  <mat-label>ผู้ประสานงาน ชื่อ-นามสกุล</mat-label>
+                  <input
+                    matInput
+                    [(ngModel)]="data.coordinator"
+                    id="coordinator"
+                    required
+                    readonly
+                  />
+                </mat-form-field>
+  
+                <mat-form-field appearance="fill">
+                  <mat-label>ตำแหน่ง</mat-label>
+                  <input
+                    matInput
+                    [(ngModel)]="data.position"
+                    id="position"
+                    required
+                    readonly
+                  />
+                </mat-form-field>
+              </div>
+  
+              <div class="example-container1">
+                <mat-form-field appearance="fill">
+                  <mat-label>โทรศัพท์</mat-label>
+                  <input
+                    matInput
+                    [(ngModel)]="data.phone"
+                    id="fax"
+                    required
+                    readonly
+                  />
+                </mat-form-field>
+  
+                <mat-form-field appearance="fill">
+                  <mat-label>โทรสาร</mat-label>
+                  <input
+                    matInput
+                    [(ngModel)]="data.fax"
+                    id="fax"
+                    required
+                    readonly
+                  />
+                </mat-form-field>
+  
+                <mat-form-field appearance="fill">
+                  <mat-label>โทรศัพท์เคลื่อนที่</mat-label>
+                  <input
+                    matInput
+                    [(ngModel)]="data.telephone"
+                    id="telephone"
+                    required
+                    readonly
+                  />
+                </mat-form-field>
+  
+                <mat-form-field appearance="fill">
+                  <mat-label>อีเมล์</mat-label>
+                  <input
+                    matInput
+                    [(ngModel)]="data.email"
+                    id="email"
+                    required
+                    readonly
+                  />
+                </mat-form-field>
+              </div>
+  
+              <div class="example-container">
+                <mat-form-field appearance="fill">
+                  <mat-label>หน่วยงานภายในที่ร่วมรับผิดชอบโครงการ</mat-label>
+                  <input
+                    matInput
+                    [(ngModel)]="data.incom"
+                    id="incom"
+                    required
+                    readonly
+                  />
+                </mat-form-field>
+  
+                <mat-form-field appearance="fill">
+                  <mat-label>หน่วยงานภายนอกที่ร่วมรับผิดชอบโครงการ</mat-label>
+                  <input
+                    matInput
+                    [(ngModel)]="data.excom"
+                    id="excom"
+                    required
+                    readonly
+                  />
+                </mat-form-field>
+              </div>
+  
+              <mat-label id="example-radio-group-label"
+                >ความสอดคล้องกับกลยุทธ์ในการดำเนินงานหลักของยุทธศาสตร์ที่ 3
+                เชิงรุก : (เลือกกลยุทธ์ที่สอดคล้องมากที่สุด)</mat-label
+              >
+              <mat-radio-group
+                aria-labelledby="example-radio-group-label"
+                class="example-radio-group"
+                [(ngModel)]="data.strategic"
+                readonly
+              >
+                <mat-radio-button
+                  class="example-radio-button"
+                  *ngFor="let season of seasons"
+                  [value]="season"
+                  readonly
+                >
+                  {{ season }}
+                </mat-radio-button>
+              </mat-radio-group>
+  
+              <label for="duration">ระยะเวลาดำเนินโครงการ/กิจกรรม</label><br />
+              <div class="form-check-inline">
+                <label class="form-check-inline">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <input type="radio" name="duration" />
+                      </div>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="duration"
+                      placeholder="เดือน"
+                      [(ngModel)]="data.duration"
+                      readonly
+                    />
+                  </div>
+                </label>
+              </div>
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    name="duration"
+                    value="12"
+                    [(ngModel)]="data.duration"
+                    readonly
+                  />1 ปี&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </label>
+              </div>
+              <label class="form-check-inline">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <input type="radio" name="duration" />
+                    </div>
+                  </div>
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="startyear"
+                    placeholder="เริ่มต้นปี"
+                    readonly
+                  />&nbsp;&nbsp;<input
+                    type="number"
+                    class="form-control"
+                    name="endyear"
+                    placeholder="สิ้นสุดปี"
+                    readonly
+                  />
+                </div>
+              </label>
+            </div>
+            <div class="example-container2">
+              &nbsp;&nbsp;&nbsp;&nbsp;<mat-form-field appearance="fill">
+                <mat-label>ความสำคัญของโครงการ/หลักการและเหตุผล</mat-label>
+                <textarea
+                  matInput
+                  [(ngModel)]="data.importance"
+                  id="importance"
+                  required
+                  rows="10"
+                  readonly
+                ></textarea>
+              </mat-form-field>
+            </div>
+            <div class="example-container2">
+              &nbsp;&nbsp;&nbsp;&nbsp;<mat-form-field appearance="fill">
+                <mat-label>วัตถุประสงค์ของโครงการ/กิจกรรม</mat-label>
+                <textarea
+                  matInput
+                  [(ngModel)]="data.obproject"
+                  id="obproject"
+                  required
+                  rows="10"
+                  readonly
+                ></textarea>
+              </mat-form-field>
+            </div>
+            <div class="example-container2">
+              &nbsp;&nbsp;&nbsp;&nbsp;<mat-form-field appearance="fill">
+                <mat-label>เป้าหมายของโครงการ/กิจกรรม</mat-label>
+                <textarea
+                  matInput
+                  [(ngModel)]="data.goalproject"
+                  id="goalproject"
+                  required
+                  rows="10"
+                  readonly
+                ></textarea>
+              </mat-form-field>
+            </div>
+            <div class="example-container">
+              &nbsp;&nbsp;&nbsp;&nbsp;<mat-form-field appearance="fill">
+                <mat-label>พื้นที่ดำเนินการ</mat-label>
+                <input
+                  matInput
+                  [(ngModel)]="data.projectarea"
+                  id="projectarea"
+                  required
+                  readonly
+                />
+              </mat-form-field>
+            </div>
+          </mat-tab>
+  
+          <mat-tab label="ขั้นตอน">
+            <br />
+            <div class="example-container2">
+              <mat-label style="margin-left: 1%;"
+                >รายละเอียดวิธีการดำเนินโครงการ</mat-label
+              >
+  
+              <table mat-table [dataSource]="dataDescription" class="mat-elevation-z8">
+                <!-- Position Column -->
+                <ng-container matColumnDef="activity">
+                  <th mat-header-cell *matHeaderCellDef>กิจกรรมที่ดำเนินการ</th>
+                  <td mat-cell *matCellDef="let element">
+                    {{ element.activity }}
+                  </td>
+                </ng-container>
+  
+                <!-- Name Column -->
+                <ng-container matColumnDef="description">
+                  <th mat-header-cell *matHeaderCellDef>รายละเอียดกิจกรรม</th>
+                  <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+                </ng-container>
+  
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+              </table>
+            </div><br>
+  
+            <div class="example-container2">
+              &nbsp;&nbsp;&nbsp;&nbsp;<mat-form-field appearance="fill">
+                <mat-label>กลุ่มเป้าหมาย</mat-label>
+                <textarea
+                  matInput
+                  [(ngModel)]="data.targetgroup"
+                  id="targetgroup"
+                  required
+                  rows="10"
+                  readonly
+                ></textarea>
+              </mat-form-field>
+            </div>
+  
+            <div class="example-container2">
+              <mat-label style="margin-left: 1%;"
+                >ขั้นตอน/วิธีดำเนินการ และหมวดเงินที่ใช้</mat-label
+              >
+              <table mat-table [dataSource]="dataSteps" class="mat-elevation-z8">
+                <!-- Position Column -->
+                <ng-container matColumnDef="steps">
+                  <th mat-header-cell *matHeaderCellDef>ขั้นตอน/วิธีดำเนินการ</th>
+                  <td mat-cell *matCellDef="let element">
+                    {{ element.steps }}
+                  </td>
+                </ng-container>
+  
+                <!-- Name Column -->
+                <ng-container matColumnDef="goal">
+                  <th mat-header-cell *matHeaderCellDef>เป้าหมาย</th>
+                  <td mat-cell *matCellDef="let element">{{ element.goal }}</td>
+                </ng-container>
+  
+  
+                <!-- Name Column -->
+                <ng-container matColumnDef="pro">
+                  <th mat-header-cell *matHeaderCellDef>งบดำเนินการ</th>
+                  <td mat-cell *matCellDef="let element">{{ element.pro }}</td>
+                </ng-container>
+  
+                <!-- Name Column -->
+                <ng-container matColumnDef="in">
+                  <th mat-header-cell *matHeaderCellDef>งบลงทุน</th>
+                  <td mat-cell *matCellDef="let element">{{ element.in }}</td>
+                </ng-container>
+  
+                <!-- Name Column -->
+                <ng-container matColumnDef="etc">
+                  <th mat-header-cell *matHeaderCellDef>งบรายจ่ายอื่น</th>
+                  <td mat-cell *matCellDef="let element">{{ element.etc }}</td>
+                </ng-container>
+  
+                <!-- Name Column -->
+                <ng-container matColumnDef="sub">
+                  <th mat-header-cell *matHeaderCellDef>งบเงินอุดหนุน</th>
+                  <td mat-cell *matCellDef="let element">{{ element.sub }}</td>
+                </ng-container>
+  
+                <tr mat-header-row *matHeaderRowDef="ColumnStep"></tr>
+                <tr mat-row *matRowDef="let row; columns: ColumnStep"></tr>
+              </table>
+            </div><br>
+  
+              <div class="example-container2">
+                <mat-label style="margin-left: 1%;"
+                  >ผลผลิต (Output)</mat-label
+                >
+
+                <table mat-table [dataSource]="dataOutput" class="mat-elevation-z8">
+                  <!-- Position Column -->
+                  <ng-container matColumnDef="trimas">
+                    <th mat-header-cell *matHeaderCellDef>ไตรมาส</th>
+                    <td mat-cell *matCellDef="let element">
+                      {{ element.trimas }}
+                    </td>
+                  </ng-container>
+    
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="volume">
+                    <th mat-header-cell *matHeaderCellDef>ตัวชี้วัดเชิงปริมาณ</th>
+                    <td mat-cell *matCellDef="let element">{{ element.volume }}</td>
+                  </ng-container>
+  
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="quality">
+                    <th mat-header-cell *matHeaderCellDef>ตัวชี้วัดเชิงคุณภาพ</th>
+                    <td mat-cell *matCellDef="let element">{{ element.quality }}</td>
+                  </ng-container>
+  
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="time">
+                    <th mat-header-cell *matHeaderCellDef>ตัวชี้วัดเชิงเวลา</th>
+                    <td mat-cell *matCellDef="let element">{{ element.time }}</td>
+                  </ng-container>
+  
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="cost">
+                    <th mat-header-cell *matHeaderCellDef>ตัวชี้วัดเชิงต้นทุน</th>
+                    <td mat-cell *matCellDef="let element">{{ element.cost }}</td>
+                  </ng-container>
+    
+                  <tr mat-header-row *matHeaderRowDef="ColumnOutput"></tr>
+                  <tr mat-row *matRowDef="let row; columns: ColumnOutput"></tr>
+                </table>
+              </div><br>
+  
+              <mat-label style="margin-left: 1%;"
+                  >ผลลัพธ์ (Outcome)</mat-label
+                >
+              <table mat-table [dataSource]="dataOutcome" class="mat-elevation-z8">
+                <!-- Position Column -->
+                <ng-container matColumnDef="trimas">
+                  <th mat-header-cell *matHeaderCellDef>ไตรมาส</th>
+                  <td mat-cell *matCellDef="let element">
+                    {{ element.trimas }}
+                  </td>
+                </ng-container>
+  
+                <!-- Name Column -->
+                <ng-container matColumnDef="volume">
+                  <th mat-header-cell *matHeaderCellDef>ตัวชี้วัดเชิงปริมาณ</th>
+                  <td mat-cell *matCellDef="let element">{{ element.volume }}</td>
+                </ng-container>
+  
+                <!-- Name Column -->
+                <ng-container matColumnDef="quality">
+                  <th mat-header-cell *matHeaderCellDef>ตัวชี้วัดเชิงคุณภาพ</th>
+                  <td mat-cell *matCellDef="let element">{{ element.quality }}</td>
+                </ng-container>
+  
+                <!-- Name Column -->
+                <ng-container matColumnDef="time">
+                  <th mat-header-cell *matHeaderCellDef>ตัวชี้วัดเชิงเวลา</th>
+                  <td mat-cell *matCellDef="let element">{{ element.time }}</td>
+                </ng-container>
+  
+                <!-- Name Column -->
+                <ng-container matColumnDef="cost">
+                  <th mat-header-cell *matHeaderCellDef>ตัวชี้วัดเชิงต้นทุน</th>
+                  <td mat-cell *matCellDef="let element">{{ element.cost }}</td>
+                </ng-container>
+  
+                <tr mat-header-row *matHeaderRowDef="ColumnOutcome"></tr>
+                <tr mat-row *matRowDef="let row; columns: ColumnOutcome"></tr>
+              </table>
+            <br>
+  
+          </mat-tab>
+          <mat-tab label="งบประมาณ"><br>
+            <div class="example-container">
+              &nbsp;&nbsp;&nbsp;&nbsp;<mat-form-field appearance="fill">
+                <mat-label>งบประมาณรวมทั้งโครงการ</mat-label>
+                <input
+                  matInput type="number"
+                  [(ngModel)]="data.totalbudget"
+                  id="totalbudget"
+                  required
+                  readonly
+                />
+              </mat-form-field>
+            </div>
+            <div class="example-container2">
+              <mat-label style="margin-left: 1%;"
+                >รายละเอียดงบประมาณโครงการ</mat-label
+              >
+              <table mat-table [dataSource]="dataBudget" class="mat-elevation-z8">
+                <!-- Position Column -->
+                <ng-container matColumnDef="year">
+                  <th mat-header-cell *matHeaderCellDef>ปีงบประมาณ</th>
+                  <td mat-cell *matCellDef="let element">
+                    {{ element.year }}
+                  </td>
+                </ng-container>
+  
+                <!-- Name Column -->
+                <ng-container matColumnDef="goal">
+                  <th mat-header-cell *matHeaderCellDef >เป้าหมาย</th>
+                  <td mat-cell *matCellDef="let element">{{ element.goal }}</td>
+                </ng-container>
+  
+                <!-- Name Column -->
+                <ng-container matColumnDef="budget">
+                  <th mat-header-cell *matHeaderCellDef>งบประมาณ (บาท)</th>
+                  <td mat-cell *matCellDef="let element">{{ element.budget }}</td>
+                </ng-container>
+  
+                <tr mat-header-row *matHeaderRowDef="ColumnBudget"></tr>
+                <tr mat-row *matRowDef="let row; columns: ColumnBudget"></tr>
+              </table>
+            </div><br>
+  
+            <div class="example-container2">
+              <mat-label style="margin-left: 1%;"
+                >งบประมาณที่ใช้ในปีที่ผ่านมา</mat-label
+              >
+  
+              <table mat-table [dataSource]="dataBudgetlast" class="mat-elevation-z8">
+                <!-- Position Column -->
+                <ng-container matColumnDef="year">
+                  <th mat-header-cell *matHeaderCellDef>ปีงบประมาณ</th>
+                  <td mat-cell *matCellDef="let element">
+                    {{ element.year }}
+                  </td>
+                </ng-container>
+  
+                <!-- Name Column -->
+                <ng-container matColumnDef="goal">
+                  <th mat-header-cell *matHeaderCellDef>เป้าหมาย</th>
+                  <td mat-cell *matCellDef="let element">{{ element.goal }}</td>
+                </ng-container>
+  
+                <tr mat-header-row *matHeaderRowDef="ColumnBudgetlast"></tr>
+                <tr mat-row *matRowDef="let row; columns: ColumnBudgetlast"></tr>
+              </table>
+            </div><br>
+  
+          </mat-tab>
+          <mat-tab label="รายละเอียดงบประมาณ"> 
+            <div class="example-container2">
+              <mat-label style="margin-left: 1%;"
+                >รายละเอียดงบประมาณ (แจกแจงรายละเอียดค่าใช้จ่ายรายกิจกรรม)</mat-label
+              >
+
+              <table mat-table [dataSource]="dataDesBudget" class="mat-elevation-z8">
+                <!-- Position Column -->
+                <ng-container matColumnDef="activity">
+                  <th mat-header-cell *matHeaderCellDef>กิจกรรมที่</th>
+                  <td mat-cell *matCellDef="let element">
+                    {{ element.activity }}
+                  </td>
+                </ng-container>
+  
+                <!-- Name Column -->
+                <ng-container matColumnDef="total">
+                  <th mat-header-cell *matHeaderCellDef>จำนวนเงินรวม</th>
+                  <td mat-cell *matCellDef="let element">{{ element.total }}</td>
+                </ng-container>
+  
+                <tr mat-header-row *matHeaderRowDef="ColumnDesBudget"></tr>
+                <tr mat-row *matRowDef="let row; columns: ColumnDesBudget"></tr>
+              </table>
+            </div><br>  
+  
+            <div class="example-container2">
+              &nbsp;&nbsp;&nbsp;&nbsp;<mat-form-field appearance="fill">
+                <mat-label>วิธีการติดตามประเมินผล</mat-label>
+                <textarea
+                  matInput
+                  [(ngModel)]="data.followstep"
+                  id="followstep"
+                  required
+                  rows="10"
+                  readonly
+                ></textarea>
+              </mat-form-field>
+            </div>
+  
+            <div class="example-container2">
+              &nbsp;&nbsp;&nbsp;&nbsp;<mat-form-field appearance="fill">
+                <mat-label>เครื่องมือติดตามประเมินผล</mat-label>
+                <textarea
+                  matInput
+                  [(ngModel)]="data.followtools"
+                  id="followtools"
+                  required
+                  rows="10"
+                  readonly
+                ></textarea>
+              </mat-form-field>
+            </div>
+  
+            <div class="example-container2">
+              &nbsp;&nbsp;&nbsp;&nbsp;<mat-form-field appearance="fill">
+                <mat-label>ระยะเวลาติดตามประเมินผล</mat-label>
+                <input
+                  matInput
+                  [(ngModel)]="data.followtime"
+                  id="followtime"
+                  required
+                  readonly
+                >
+              </mat-form-field>
+            </div>
+  
+            <div class="example-container2">
+              <mat-label style="margin-left: 1%;"
+                >ความเสี่ยงที่คาดว่าจะเกิดขึ้น</mat-label
+              >
+  
+              <table mat-table [dataSource]="dataRisk" class="mat-elevation-z8">
+                <!-- Position Column -->
+                <ng-container matColumnDef="step">
+                  <th mat-header-cell *matHeaderCellDef>ขั้นตอน/วิธีดำเนินการ</th>
+                  <td mat-cell *matCellDef="let element">
+                    {{ element.step }}
+                  </td>
+                </ng-container>
+  
+                <!-- Name Column -->
+                <ng-container matColumnDef="risk">
+                  <th mat-header-cell *matHeaderCellDef>ความเสี่ยงที่คาดว่าจะเกิดขึ้น</th>
+                  <td mat-cell *matCellDef="let element">{{ element.risk }}</td>
+                </ng-container>
+  
+                <ng-container matColumnDef="closerisk">
+                  <th mat-header-cell *matHeaderCellDef>วิธีการปิดความเสี่ยง</th>
+                  <td mat-cell *matCellDef="let element">{{ element.closerisk }}</td>
+                </ng-container>
+  
+                <tr mat-header-row *matHeaderRowDef="ColumnRisk"></tr>
+                <tr mat-row *matRowDef="let row; columns: ColumnRisk"></tr>
+              </table>
+            </div><br> 
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

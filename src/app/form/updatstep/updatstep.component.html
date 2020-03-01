@@ -1,0 +1,38 @@
+<mat-label align="center">ขั้นตอน/วิธีดำเนินการ และหมวดเงินที่ใช้</mat-label>
+    <form class="example-form">
+
+        <mat-form-field class="example-full-width">
+            <mat-label>ขั้นตอน/วิธีดำเนินการ</mat-label>
+            <input matInput [(ngModel)]="data.steps" name="steps">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>เป้าหมาย</mat-label>
+            <input matInput [(ngModel)]="data.goal" name="goal">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>งบดำเนินงาน</mat-label>
+            <input matInput type="number" [(ngModel)]="data.pro" name="pro">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>งบลงทุน</mat-label>
+            <input matInput type="number" [(ngModel)]="data.in" name="in">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>งบรายจ่ายอื่น</mat-label>
+            <input matInput type="number" [(ngModel)]="data.etc" name="etc">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>งบเงินอุดหนุน</mat-label>
+            <input matInput type="number" [(ngModel)]="data.sub" name="sub">
+          </mat-form-field>
+      </form>
+<div align="center">
+  <button mat-raised-button (click)="close()" name="close" color="secondary">ปิด</button>
+
+  <button mat-raised-button (click)="save()" name="save" color="primary">บันทึก</button>
+</div>

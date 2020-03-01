@@ -1,0 +1,42 @@
+<mat-label>ความเสี่ยงที่คาดว่าจะเกิดขึ้น</mat-label>
+    <form class="example-form">
+
+        <mat-form-field appearance="fill">
+            <mat-label>ขั้นตอน/วิธีดำเนินการ</mat-label>
+            <textarea
+              matInput
+              [(ngModel)]="data.step"
+              name="step"
+              required
+              rows="8"
+            ></textarea>
+          </mat-form-field>
+      
+        <mat-form-field appearance="fill">
+            <mat-label>ความเสี่ยงที่คาดว่าจะเกิดขึ้น</mat-label>
+            <textarea
+              matInput
+              [(ngModel)]="data.risk"
+              name="risk"
+              required
+              rows="8"
+            ></textarea>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>วิธีการปิดความเสี่ยง</mat-label>
+            <textarea
+              matInput
+              [(ngModel)]="data.closerisk"
+              name="closerisk"
+              required
+              rows="8"
+            ></textarea>
+          </mat-form-field>
+      </form>
+
+<div align="center">
+  <button mat-raised-button (click)="close()" name="close" color="secondary">ปิด</button>
+
+    <button mat-raised-button (click)="save()" name="save" color="primary">บันทึก</button>
+</div>

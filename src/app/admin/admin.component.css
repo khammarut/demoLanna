@@ -1,0 +1,31 @@
+.example-icon {
+    padding: 16 8px;
+  }
+  
+  mat-toolbar{
+    background-color: white;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .black{
+    color: black;
+  }
+
+  #wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-header-image {
+    background-image: url('https://www.img.in.th/images/64416dc1bf7f5405e96f0c41e48ec988.png');
+    background-size:     contain;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;
+    width: 50px;
+    height: 50px;
+  }
+

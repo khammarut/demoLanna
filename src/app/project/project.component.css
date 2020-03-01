@@ -1,0 +1,31 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-column-projectname , .mat-column-department {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 40% !important;
+    width: 40% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  
+    word-break: break-word;
+  
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    font-size: 16px;
+    color: white;
+  }
+
+.example-spacer {
+ flex: 1 1 auto;
+}
+  
+.mat-column-action{
+  font-size: 16px;
+  color: white;
+}
+    

@@ -1,0 +1,30 @@
+<mat-label>รายละเอียดงบประมาณโครงการ</mat-label>
+    <form class="example-form">
+
+        <mat-form-field class="example-full-width">
+            <mat-label>ปีงบประมาณ</mat-label>
+            <input matInput type="number" [(ngModel)]="data.year" name="year">
+          </mat-form-field>
+      
+        <mat-form-field appearance="fill">
+            <mat-label>เป้าหมาย</mat-label>
+            <textarea
+              matInput
+              [(ngModel)]="data.goal"
+              name="goal"
+              required
+              rows="8"
+            ></textarea>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>งบประมาณ (บาท)</mat-label>
+            <input matInput type="number" [(ngModel)]="data.budget" name="budget">
+          </mat-form-field>
+      </form>
+
+<div align="center">
+  <button mat-raised-button (click)="close()" name="close" color="secondary">ปิด</button>
+
+  <button mat-raised-button (click)="save()" name="save" color="primary">บันทึก</button>
+</div>

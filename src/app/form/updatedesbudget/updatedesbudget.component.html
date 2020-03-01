@@ -1,0 +1,74 @@
+<div align="center">
+    <mat-label>รายละเอียดงบประมาณโครงการ</mat-label>
+        <form class="example-form">
+    
+            <mat-form-field class="example-full-width">
+                <mat-label>กิจกรรมที่</mat-label>
+                <input matInput type="number" [(ngModel)]="data.activity" name="activity">
+              </mat-form-field>
+    
+              <mat-form-field appearance="fill">
+                <mat-label>ค่าอาหารทำการนอกเวลาราชการ</mat-label>
+                <input matInput type="number" [(ngModel)]="data.food" name="food">
+              </mat-form-field>
+    
+              <mat-form-field appearance="fill">
+                <mat-label>ค่าตอบแทนวิทยากร</mat-label>
+                <input matInput type="number" [(ngModel)]="data.expert" name="expert">
+              </mat-form-field>
+    
+              <mat-form-field appearance="fill">
+                <mat-label>ค่าเบี้ยเลี้ยง ที่พัก และพาหนะ</mat-label>
+                <input matInput type="number" [(ngModel)]="data.daily" name="daily">
+              </mat-form-field>
+    
+              <mat-form-field appearance="fill">
+                <mat-label>ค่าใช้จ่ายในการประชุม</mat-label>
+                <input matInput type="number" [(ngModel)]="data.meeting" name="meeting">
+              </mat-form-field>
+    
+              <mat-form-field appearance="fill">
+                <mat-label>ค่าจ้างเหมาบริการ</mat-label>
+                <input matInput type="number" [(ngModel)]="data.service" name="service">
+              </mat-form-field>
+    
+              <mat-form-field appearance="fill">
+                <mat-label>ค่าวัสดุสำนักงาน</mat-label>
+                <input matInput type="number" [(ngModel)]="data.office" name="office">
+              </mat-form-field>
+    
+              <mat-form-field appearance="fill">
+                <mat-label>ค่าวัสดุคอมพิวเตอร์</mat-label>
+                <input matInput type="number" [(ngModel)]="data.computer" name="computer">
+              </mat-form-field>
+    
+              <mat-form-field appearance="fill">
+                <mat-label>ค่าครุภัณฑ์</mat-label>
+                <input matInput type="number" [(ngModel)]="data.durable" name="durable">
+              </mat-form-field>
+    
+              <mat-form-field appearance="fill">
+                <mat-label>ค่าที่ดิน/สิ่งก่อสร้าง</mat-label>
+                <input matInput type="number" [(ngModel)]="data.ground" name="ground">
+              </mat-form-field>
+    
+              <mat-form-field appearance="fill">
+                <mat-label>งบเงินอุดหนุน</mat-label>
+                <input matInput type="number" [(ngModel)]="data.sub" name="sub">
+              </mat-form-field>
+    
+              <mat-form-field appearance="fill">
+                <mat-label>งบรายจ่ายอื่น</mat-label>
+                <input matInput type="number" [(ngModel)]="data.etc" name="etc">
+              </mat-form-field>
+    
+              <mat-form-field appearance="fill">
+                <mat-label>รวมทั้งหมด</mat-label>
+                <input matInput type="number" [(ngModel)]="data.total" name="total">
+              </mat-form-field>
+          </form>
+    
+          <button mat-raised-button (click)="close()" name="close" color="secondary">ปิด</button>
+    
+          <button mat-raised-button (click)="save()" name="save" color="primary">บันทึก</button>
+    </div>

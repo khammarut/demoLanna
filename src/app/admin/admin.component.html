@@ -1,0 +1,46 @@
+<div class="row col-md-12">
+  <div class="row col-md-3">
+    <div style="background-color: white;width: 100%;margin-right: 25%;box-shadow: 2px 2px black;">
+      <img src="https://sv1.picz.in.th/images/2020/03/02/xaiX2Z.jpg" style="width: 220px;margin-left: 20px;margin-top: 5px;"><br><hr>
+
+        <div id="wrapper" class="row">
+          <button mat-raised-button style="width: 240px;text-align: left;background-color: #800000;" (click)="isProject = false ; isProjectApp = false ; isDash = true"><mat-icon>dashboard</mat-icon>     ผลสรุป</button>
+          <br>
+          <button mat-raised-button style="width: 240px;text-align: left;background-color: lightgray;color: black;box-shadow:2px 2px lightgray;" (click)="isProject = true ; isProjectApp = false ; isDash = false"><mat-icon>list_alt</mat-icon>     โครงการทั้งหมด</button>
+          <br><br><br>  
+          <button mat-raised-button style="width: 240px;text-align: left;background-color: #800000;" (click)="isProjectApp = true ; isProject = false ; isDash = false"><mat-icon>done_all</mat-icon>     โครงการที่อนุมัติ</button>
+        </div>
+    </div>
+  </div>
+
+  <div class="row col-md-9">
+    <mat-toolbar>
+      <mat-toolbar-row class="black">
+        &nbsp;<span>ผลสรุป</span><br>
+        <span class="example-spacer"></span>
+        <button mat-button>
+          {{user}} <mat-icon>account_circle</mat-icon>
+        </button>
+      </mat-toolbar-row>
+      </mat-toolbar>
+    <div class="container">  
+      <mat-card style="margin-top: 1%;"  *ngIf="isDash">
+        <mat-card-content>
+          <app-dashboard></app-dashboard>
+        </mat-card-content>
+      </mat-card>
+
+        <mat-card style="margin-top: 1%;"  *ngIf="isProject">
+          <mat-card-content>
+            <app-project></app-project>
+          </mat-card-content>
+        </mat-card>
+    
+        <mat-card style="margin-top: 1%;" *ngIf="isProjectApp">
+            <mat-card-content>
+                <app-middle></app-middle>
+            </mat-card-content>
+          </mat-card>
+      </div>
+  </div>
+</div>

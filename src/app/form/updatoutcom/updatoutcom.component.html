@@ -1,0 +1,58 @@
+<div align="center">
+    <mat-label>ผลลัพธ์ (Outcome)</mat-label>
+        <form class="example-form">
+    
+            <mat-form-field class="example-full-width">
+                <mat-label>ไตรมาสที่</mat-label>
+                <input matInput type="number" [(ngModel)]="data.trimas" name="trimas">
+              </mat-form-field>
+          
+            <mat-form-field appearance="fill">
+                <mat-label>ตัวชี้วัดเชิงปริมาณ</mat-label>
+                <textarea
+                  matInput
+                  [(ngModel)]="data.volume"
+                  name="volume"
+                  required
+                  rows="8"
+                ></textarea>
+              </mat-form-field>
+    
+              <mat-form-field appearance="fill">
+                <mat-label>ตัวชี้วัดเชิงคุณภาพ</mat-label>
+                <textarea
+                  matInput
+                  [(ngModel)]="data.quality"
+                  name="quality"
+                  required
+                  rows="8"
+                ></textarea>
+              </mat-form-field>
+    
+              <mat-form-field appearance="fill">
+                <mat-label>ตัวชี้วัดเชิงเวลา</mat-label>
+                <textarea
+                  matInput
+                  [(ngModel)]="data.time"
+                  name="time"
+                  required
+                  rows="8"
+                ></textarea>
+              </mat-form-field>
+    
+              <mat-form-field appearance="fill">
+                <mat-label>ตัวชี้วัดเชิงต้นทุน</mat-label>
+                <textarea
+                  matInput
+                  [(ngModel)]="data.cost"
+                  name="cost"
+                  required
+                  rows="8"
+                ></textarea>
+              </mat-form-field>
+          </form>
+    
+          <button mat-raised-button (click)="close()" name="close" color="secondary">ปิด</button>
+    
+          <button mat-raised-button (click)="save()" name="save" color="primary">บันทึก</button>
+    </div>

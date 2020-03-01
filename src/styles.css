@@ -1,0 +1,104 @@
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import 'https://fonts.googleapis.com/css?family=Sarabun&display=swap';
+
+body {
+ margin: 0;
+ font-family: 'Sarabun';
+ align-items: center;
+ background-color:lightgray;
+}
+
+table {
+    table-layout: fixed;
+    font-size: 18px;
+}
+
+@font-face {
+  font-family: Sarabun;
+  src: url(assets/THSarabun.ttf) format("opentype");
+}
+
+.container{
+    margin-top: 10px;
+}
+
+.example-container .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+  
+  .example-container .mat-form-field {
+    width: 508px;
+  }
+  
+  .example-container form {
+    margin-bottom: 20px;
+  }
+  
+  .example-container form > * {
+    margin: 5px 0;
+  }
+  
+  .example-container .mat-radio-button {
+    margin: 0 12px;
+  }
+
+  .example-container1 .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+  
+  .example-container1 .mat-form-field {
+    width: 250px;
+  }
+  
+  .example-container1 form {
+    margin-bottom: 20px;
+  }
+  
+  .example-container1 form > * {
+    margin: 5px 0;
+  }
+  
+  .example-container1 .mat-radio-button {
+    margin: 0 12px;
+  }
+
+  .example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+  
+  .example-radio-button {
+    margin: 5px;
+  }
+
+  .example-form {
+    min-width: 150px;
+    max-width: 1000px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .example-container2 .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+  
+  .example-container2 .mat-form-field {
+    width: 1023px;
+  }
+  
+  .example-container2 form {
+    margin-bottom: 20px;
+  }
+  
+  .example-container2 form > * {
+    margin: 5px 0;
+  }
+  
+  .example-container2 .mat-radio-button {
+    margin: 0 12px;
+  }
